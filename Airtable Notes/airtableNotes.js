@@ -5,7 +5,7 @@ var APIKey = ""; // Enter API Key between quotation marks
 
 // Setup Airtable API and Content
 var endpoint = "https://api.airtable.com/v0/";
-var base = ""; Enter base ID between quotations marks
+var base = ""; //Enter base ID between quotations marks
 
 function dateToday() {
 	var d = new Date();
@@ -47,10 +47,11 @@ function airtablePost(date, studentID, lessonID) {
 	var draft = editor.getText()
 	var d = {"fields": {
 			"Date": date,
-			"Notes": draft
+			"Notes": draft,
 			"Student": studentID,
 			"Lesson": lessonID
 		}
+	}
 	var http = HTTP.create();
 	var response = http.request({
 	"url": endpoint + base +"/Notes",
@@ -58,7 +59,7 @@ function airtablePost(date, studentID, lessonID) {
 	"headers": {
 		"Authorization": "Bearer " + APIKey,
 		"Content-type": "application/json"
-	}
+	},
 	"data": JSON.stringify(d)
 	});
 	if (response.success) {
