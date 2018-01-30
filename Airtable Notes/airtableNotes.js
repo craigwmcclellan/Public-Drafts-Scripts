@@ -48,8 +48,8 @@ function airtablePost(date, studentID, lessonID) {
 	var d = {"fields": {
 			"Date": date,
 			"Notes": draft,
-			"Student": studentID,
-			"Lesson": lessonID
+			"Student": [studentID],
+			"Lesson": [lessonID]
 		}
 	}
 	var http = HTTP.create();
@@ -85,6 +85,7 @@ function namesFromJSON(table, entryNameField) { // entryNameField will be either
 		promptList.push(itemName)
 		promptIDs[itemName] = id
 	}
+	// Create Drafts Prompt with list of names
 	var p = Prompt.create();
 	var arrayLength = promptList.length;
 	for (var i = 0; i < arrayLength; i++) {
