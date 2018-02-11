@@ -15,6 +15,7 @@ var lines = draft.content.split("\n");
 
 function headingChooser() {
 	var p = Prompt.create();
+	p.title = "Heading?"
 	var arrayLength = headings.length;
 	for (var i = 0; i < arrayLength; i++) {
 		p.addButton(headings[i]);
