@@ -1,5 +1,9 @@
 // This script utilizes the new URL scheme and automation available in Things 3.4 and above to add todos to a specific project and heading in Things.
 
+// to get your project ID, in Things, open the project, select share, and select yet sharing URL.
+
+// type your own Headings below.
+
 var projectID = "7ABD3766-1819-45E2-BE2F-69A82BBC2B52";
 var headings = ["Planning", "Grading", "None"];
 
