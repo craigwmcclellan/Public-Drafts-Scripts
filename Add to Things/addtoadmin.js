@@ -1,7 +1,7 @@
 // This script utilizes the new URL scheme and automation available in Things 3.4 and above to add todos to a specific project and heading in Things.
 
 var projectID = "7ABD3766-1819-45E2-BE2F-69A82BBC2B52";
-var headings = ["Planning", "Grading", "none"];
+var headings = ["Planning", "Grading", "None"];
 
 
 // Split lines of current draft to make them into individual todos
@@ -11,15 +11,18 @@ var lines = draft.content.split("\n");
 
 function headingChooser() {
 	var p = Prompt.create();
-	for (var item in headings) {
-		p.addButton(item);
+	var arrayLength = headings.length;
+	for (var i = 0; i < arrayLength; i++) {
+		p.addButton(headings[i]);
 	}
 	var didSelect = p.show();
-	if p.buttonPressed = "None" {
+	var selection = p.buttonPressed
+	console.log(selection)
+	if (selection == "None") {
 		return ""
 	}
 	else {
-		return p.buttonPressed
+		return selection
 	}
 
 }
@@ -43,10 +46,11 @@ var head = headingChooser();
 var todos = todoList(head);
 
 // Create Things JSON container to send todos.
-var container = TJSContainer.create([todos]);
+var container = TJSContainer.create(todos);
 
+// Create callback URL object to send data to Things
 var cb = CallbackURL.create();
-cb.baseURL = container.url();
+cb.baseURL = container.url;
 var success = cb.open();
 if (success) {
 	console.log("Tasks added to Things");
