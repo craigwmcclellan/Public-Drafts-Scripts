@@ -41,7 +41,7 @@ function headingAndDate() {
 	else if (dateSelect == "Tomorrow") {
 		promptResponse.push("tomorrow");
 	}
-	return promptResponse
+	return promptResponse;
 }
 
 // Create a list of todos from the separated Draft lines and add them to the project whose ID is listed above.
@@ -49,14 +49,14 @@ function headingAndDate() {
 function todoList(headingDate) {
 	var todoArray = [];
 	var date = headingDate[1];
-	var heading = headingDate[0]
+	var heading = headingDate[0];
 	for (var line of lines) {
 		var todo = TJSTodo.create();
 		todo.title = line;
 		todo.listID = projectID;
 		todo.heading = heading;
-		todo.when = date
-		todoArray.push(todo)
+		todo.when = date;
+		todoArray.push(todo);
 	}
 	return todoArray
 }
