@@ -13,7 +13,7 @@ function searchBlink(query) {
 	var success = cb.open();
 	if (success) {
 		var response = cb.callbackResponse;
-		var responseText = response.toString()
+		var responseText = response["text"]
 		editor.setText(responseText)
 	}
 	else {
