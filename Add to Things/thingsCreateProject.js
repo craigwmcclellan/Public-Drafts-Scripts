@@ -33,11 +33,14 @@ function createProject(areaID) {
 	project.title = draft.title;
 	project.areaID = areaID;
 	var draftBody = draft.processTemplate("[[body]]");
-	var lines = draftBody.content.split("\n");
+	var lines = draftBody.split("\n");
 	for (var line of lines) {
-		var todo = TJSTodo.create();
-		todo.title = line;
-		project.addTodo(todo)
+		var lineLength = line.length;
+		if (lineLength > 0) {
+			var todo = TJSTodo.create();
+			todo.title = line;
+			project.addTodo(todo)
+		}
 	}
 	return project
 }
