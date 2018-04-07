@@ -11,7 +11,7 @@ function createSheet() {
 	cb.baseURL = ulyssesURL;
 	cb.addParameter("text", markdownText);
 	// Replace the string in the second quotation marks with your group name or ID
-	cb.addParameter("group", "rbJrg2kwYE-LbGd6wLlcMg");
+	cb.addParameter("group", "");
 	var success = cb.open();
 	var response = cb.callbackResponse["targetURL"];
 	return response
@@ -24,9 +24,9 @@ var ulyssesSheet = createSheet();
 var todo = TJSTodo.create();
 todo.title = postIdea;
 todo.notes = ulyssesSheet;
-// Place your own lists and headings for the task to be added to below
-todo.list = "Content Calendar";
-todo.heading = "The Class Nerd";
+// Place your own lists and headings for the task to be added to below between quotation marks
+todo.list = "";
+todo.heading = "";
 
 var container = TJSContainer.create([todo]);
 
