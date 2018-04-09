@@ -1,0 +1,3 @@
+I wanted to create a script for Drafts 5 that would allow me to record blog post ideas both in Things 3 and Ulysses. This script creates a sheet in Ulysses with the idea as the title, returns the URL of that sheet, and creates a task in Things with the Ulysses sheet URL as a link. This way, when you decide to write that post (after Things reminds you), you don't have to search for it. You can simply tap the link and start writing.
+
+In order for this script to work, you will need to enter the [id or name of the Ulysses group](https://ulyssesapp.com/kb/x-callback-url#new-sheet) you want the sheet to be placed in as well as the list and heading you want the task created under in Things. The locations for doing this are marked with comments in the script.
